@@ -60,6 +60,13 @@ import android.util.Log;
  */
 public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
     private static String flutterEngineId = "audio_service_engine";
+
+    public static void stopService() {
+        if (AudioService.instance != null) {
+            AudioService.instance.stop();
+        }
+    }
+
     /** Must be called BEFORE any FlutterEngine is created. e.g. in Application class. */
     public static void setFlutterEngineId(String id) {
         flutterEngineId = id;
